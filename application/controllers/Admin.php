@@ -211,6 +211,7 @@ class Admin extends CI_Controller
 				);
 		}
 		//masih error
+		
 		if($value[0]['id_konfirmasi'] == null) {
 			$this->db->insert_batch('konfirmasi', $value);
 		} else {
