@@ -1,0 +1,99 @@
+.footer {
+	padding: 10px;
+	width: 100%;
+	background-color: #F7F7F7F9;
+	text-align: center;
+}
+
+.paragraph {
+	margin:25px 0; font-style:bold;	
+}
+.login-content {
+    background-color: #fff;
+    box-shadow: 0 0 40px rgba(7, 7, 7, 0.08);
+    padding: 50px 30px;
+}
+.login-title > h4 {
+    font-size: 27px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+.login-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.login-form form input {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    height: 40px;
+}
+.login-form form .checkbox-remember > input {
+    display: inline-block;
+    float: left;
+    height: 15px;
+    margin-bottom: 0;
+    width: 15px;
+}
+.login-form form .checkbox-remember > label {
+    padding-left: 10px;
+}
+.login-form form .checkbox-remember > a {
+    float: right;
+}
+.login-btn {
+    background-color: #333;
+    border: medium none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 100%;
+    transition: all .3s ease 0s;
+}
+.login-btn:hover {
+    background-color: #000;
+}
+
+.container {
+	margin-top:35px;
+}
+
+.btn-tambah {
+    margin-bottom:20px;
+    margin-right:15px;
+}
+.btn-hapus {
+    margin-left: 20px;
+    margin-bottom:20px;
+    margin-right:20px;
+}
+
+.order-btn {
+    margin-left:25px;
+    margin-bottom:20px;
+    width: 100%
+}
+
+.back {
+    color:red;
+    margin-left: 10px;
+    margin-bottom:10px;
+    width: 100%;
+}
+
+.back a {
+    color: red;
+}
+
+.back a:hover {
+    color:orange;
+}
+
+.btn-simpan {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
