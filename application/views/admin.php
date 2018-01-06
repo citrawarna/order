@@ -5,7 +5,14 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="paragraph">
-				<b><p>Tampilkan orderan dari tanggal <input type="text" id="datepicker1" placeholder="YYYY-MM-DD"> s.d <input type="text" id="datepicker2" placeholder="YYYY-MM-DD">  <a href="#" class="btn btn-secondary">OK</a> </p></b> 
+				<form action="<?= base_url('admin/tanggal') ?>" method="get">
+					<b><p>Tampilkan orderan dari tanggal 
+						<input type="text" id="datepicker1" placeholder="YYYY-MM-DD" name="dari"> 
+						s.d 
+						<input type="text" id="datepicker2" placeholder="YYYY-MM-DD" name="sampai">  
+						<input type="submit" class="btn btn-secondary" value="OK">
+					</p></b> 
+				</form>
 			</div>
 		</div>
 		<div class="col-md-4" align="right">
@@ -17,6 +24,7 @@
 		</div>
 	</div>
 	<div class="row justify-content-end">
+	<!-- flash message -->
 		<div class="col-md-12">
 			<?php if($this->session->flashdata('success')) {
 					echo '<p class="alert alert-success">';
@@ -28,12 +36,13 @@
 					echo '</p>';
 					} ?>	
 		</div>
-		<!-- BUTTON TAMBAH DATA -->
+
+	<!-- BUTTON TAMBAH DATA -->
 		<div class="btn-tambah">
 			<a href="<?= base_url('admin/tambah') ?>" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah</a>
 		</div>
 
-		<!-- BUTTON PROSES DAN HAPUS DATA -->
+	<!-- BUTTON PROSES DAN HAPUS DATA -->
 		<form action="<?= base_url('admin/proses') ?>" method="post">
 			<div class="btn-tambah">
 				<button type="submit" class="btn btn-warning btn-sm" name="proses"><i class="fa fa-cogs"></i> Proses</button>
