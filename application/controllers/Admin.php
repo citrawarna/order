@@ -210,7 +210,7 @@ class Admin extends CI_Controller
 				
 				);
 		}
-		//masih error 
+		//masih error
 		if($value[0]['id_konfirmasi'] == null) {
 			$this->db->insert_batch('konfirmasi', $value);
 		} else {
@@ -220,7 +220,6 @@ class Admin extends CI_Controller
 		$this->session->set_flashdata('success', ''.$i.' Data order berhasil diproses');
 		redirect('admin');
 	}
-
 
 	public function search($page = null){
 		//mengecek login
