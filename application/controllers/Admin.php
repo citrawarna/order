@@ -209,14 +209,22 @@ class Admin extends CI_Controller
 				'keterangan_konfirm' => $keterangan_konfirm[$i],
 				
 				);
+			$has_confirm = $this->db->query("select count(*) from konfirmasi where id_konfirmasi = '".$id_konfirmasi[$i]."'")->row_array();
+
+			if ($has_confirm['count(*)'] == 0) {
+				$this->db->insert_batch('konfirmasi', array([
+					'id_order' => $id_order[$i],				
+					'status' => $status[$i],
+					'jadi' => $jadi[$i],
+					'dari' => $dari[$i],
+					'waktu_spesifik' => $waktu_spesifik[$i],
+					'keterangan_konfirm' => $keterangan_konfirm[$i],	
+				]));	
+			}
+		
 		}
 		//masih error
-		
-		if($value[0]['id_konfirmasi'] == null) {
-			$this->db->insert_batch('konfirmasi', $value);
-		} else {
-			$this->db->update_batch('konfirmasi', $value, 'id_konfirmasi');
-		}
+		$this->db->update_batch('konfirmasi', $value, 'id_konfirmasi');
 
 		$this->session->set_flashdata('success', ''.$i.' Data order berhasil diproses');
 		redirect('admin');
