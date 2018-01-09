@@ -27,7 +27,7 @@
 				<tr>
 					<td><?= $i++ ?></td>
 					<input type="hidden" name="id_order[]" value="<?= $row['id_order'] ?>">
-					<input type="text" name="id_konfirmasi[]" value="<?= $row['id_konfirmasi'] ?>">
+					<input type="hidden" name="id_konfirmasi[]" value="<?= $row['id_konfirmasi'] ?>">
 					<td><?= $row['nama_barang'] ?></td>
 					<td><?= $row['jumlah'] ?> <?= $row['kemasan'] ?></td>
 					<td><?= $row['cabang'] ?> (<?= $row['pemesan'] ?>)</td>

@@ -206,9 +206,9 @@ class Admin extends CI_Controller
 				'jadi' => $jadi[$i],
 				'dari' => $dari[$i],
 				'waktu_spesifik' => $waktu_spesifik[$i],
-				'keterangan_konfirm' => $keterangan_konfirm[$i],
-				
-				);
+				'keterangan_konfirm' => $keterangan_konfirm[$i],			
+			);
+			//big thanks to surya karena sudah membantu menyelesaikan fungsi ini
 			$has_confirm = $this->db->query("select count(*) from konfirmasi where id_konfirmasi = '".$id_konfirmasi[$i]."'")->row_array();
 
 			if ($has_confirm['count(*)'] == 0) {
@@ -223,7 +223,7 @@ class Admin extends CI_Controller
 			}
 		
 		}
-		//masih error
+		//jika count nya 1 (atau sudah memiliki id_konfirmasi) 
 		$this->db->update_batch('konfirmasi', $value, 'id_konfirmasi');
 
 		$this->session->set_flashdata('success', ''.$i.' Data order berhasil diproses');
