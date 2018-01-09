@@ -62,7 +62,7 @@
 						<td>Nama Barang</td>
 						<td>Jumlah</td>
 						<td>Cabang</td>
-						<td>Keterangan</td>
+						<td>Catatan</td>
 						<td >Opsi</td>
 						<td width="150px"> Action</td>
 					</tr>

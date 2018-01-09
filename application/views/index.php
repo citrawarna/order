@@ -50,9 +50,9 @@
 					<td>Nama Barang</td>
 					<td>Jumlah</td>				
 					<td>Cabang</td>
-					<td>Catatan</td>
 					<td>Status Barang</td>
 					<td>Jadi</td>
+					<td>Catatan</td>
 					<td>View</td>
 				</tr>
 				
