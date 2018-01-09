@@ -17,7 +17,6 @@ class Home extends CI_Controller
 
 		//data order
 		$data = $this->db->join('user', 'user.id_user = order.id_user')
-						->join('konfirmasi', 'konfirmasi.id_order = order.id_order', 'LEFT')
 						->order_by('tanggal', 'desc')
 						->limit($per_halaman, $offset)
 						->get('order')
@@ -55,6 +54,7 @@ class Home extends CI_Controller
 						->where('tanggal <=', $sampai)
 						->order_by('tanggal', 'desc')
 						->join('user', 'user.id_user = order.id_user')
+						->join('konfirmasi', 'konfirmasi.id_order = order.id_order', 'LEFT')
 						->get('order')
 						->result_array();
 
@@ -105,6 +105,7 @@ class Home extends CI_Controller
 						->or_like('nama_barang', $keywords)
 						->order_by('tanggal', 'desc')
 						->join('user','user.id_user = order.id_user')
+						->join('konfirmasi', 'konfirmasi.id_order = order.id_order', 'LEFT')
 						->get('order')
 						->result_array();
 
@@ -112,6 +113,7 @@ class Home extends CI_Controller
 						->or_like('nama_barang', $keywords)
 						->order_by('tanggal', 'desc')
 						->join('user','user.id_user = order.id_user')
+						->join('konfirmasi', 'konfirmasi.id_order = order.id_order', 'LEFT')
 						->get('order')
 						->result_array();
 

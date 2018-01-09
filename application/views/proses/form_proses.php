@@ -18,8 +18,8 @@
 					<td>Jumlah</td>
 					<td>Pemesan</td>
 					<td>Status Barang</td>
-					<td>Jadi ?</td>
 					<td>Dari </td>
+					<td>Jadi ?</td>
 					<td>Waktu Spesifik</td>
 					<td>Keterangan</td>
 				</tr>
@@ -39,6 +39,7 @@
 							<option value="Kosong" <?php if($row['status']=="Kosong") { echo "selected"; } ?>>Kosong</option>	
 						</select>
 					</td>
+					<td><input type="text" name="dari[]" class="form-control" value="<?= $row['dari'] ?>"></td>
 					<td>
 						<select name="jadi[]" id="">
 							<option value="" <?php if($row['jadi']=="") { echo "selected"; } ?>>- Pilih -</option>
@@ -46,7 +47,6 @@
 							<option value="Tidak" <?php if($row['jadi']=="Tidak") { echo "selected"; } ?>>Tidak</option>	
 						</select>
 					</td>
-					<td><input type="text" name="dari[]" class="form-control" value="<?= $row['dari'] ?>"></td>
 					<td><input type="text" name="waktu_spesifik[]" class="form-control" value="<?= $row['waktu_spesifik'] ?>"></td>
 					<td><input type="text" name="keterangan_konfirm[]" class="form-control" value="<?= $row['keterangan_konfirm'] ?>"></td>
 				</tr>

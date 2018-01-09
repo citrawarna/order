@@ -312,6 +312,7 @@ class Admin extends CI_Controller
 						->where('tanggal <=', $sampai)
 						->order_by('tanggal', 'desc')
 						->join('user', 'user.id_user = order.id_user')
+						->join('konfirmasi', 'konfirmasi.id_order = order.id_order','LEFT')
 						->get('order')
 						->result_array();
 

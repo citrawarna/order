@@ -74,7 +74,7 @@
 						<td><?= $row['nama_barang'] ?></td>
 						<td><?= $row['jumlah'] ?> <?= strtoupper($row['kemasan'] )?></td>
 						<td><?= strtoupper($row['cabang']) ?> (<?= ucwords($row['pemesan']) ?>)</td>
-						<td><?= $row['keterangan'] ?></td>
+						<td><?= substr($row['keterangan'], 0, 15)."..."  ?></td>
 						<td><input type="checkbox" name="check[]" value="<?= $row['id_order'] ?>"></td>
 						<td>
 							<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal<?=$row['id_order'] ?>"><i class="fa fa-eye"></i> Details</button>
@@ -137,6 +137,11 @@
 								        		</td>
 								        	</tr>
 								        	<tr>
+								        		<td>Barang dari </td>
+								        		<td> : </td>
+								        		<td> <?= $detail['dari'] ?> </td>
+								        	</tr>
+								        	<tr>
 								        		<td>Jadi (Ya/Tidak)</td>
 								        		<td> : </td>
 								        		<!-- (cara bodo) memberi warna dan keterangan tulisan -->
@@ -151,14 +156,14 @@
 								        		</td>
 								        	</tr>
 								        	<tr>
-								        		<td>Barang dari </td>
-								        		<td> : </td>
-								        		<td> <?= $detail['dari'] ?> </td>
-								        	</tr>
-								        	<tr>
 								        		<td>Waktu Spesifik </td>
 								        		<td> : </td>
 								        		<td> <?= $detail['waktu_spesifik'] ?> </td>
+								        	</tr>
+								        	<tr>
+								        		<td>Catatan </td>
+								        		<td> : </td>
+								        		<td><?= $row['keterangan'] ?></td>	
 								        	</tr>
 								        	<tr>
 								        		<td>Keterangan </td>
@@ -187,3 +192,5 @@
 		<?= $pagination ?>
 	</div>
 	<br>
+
+	

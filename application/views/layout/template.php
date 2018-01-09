@@ -6,7 +6,10 @@
 <?php $this->load->view('layout/navs') ?>
 
 <!-- content -->
-<?php $this->load->view($view) ?>
+<div class="jarak">
+	<?php $this->load->view($view) ?>
+</div>
+
 
 <!-- footer -->
 <?php $this->load->view('layout/footer') ?>

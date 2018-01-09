@@ -46,44 +46,58 @@
 			<table class="table table-striped table-sm">				
 				<tr class="bg-light">
 					<td align="center">No</td>
-					<td>Tanggal</td>
-					<td>Nama</td>
+					<td>Tanggal</td>					
 					<td>Nama Barang</td>
 					<td>Jumlah</td>				
 					<td>Cabang</td>
-					<td>Keterangan</td>
-					<td>Status</td>
+					<td>Catatan</td>
+					<td>Status Barang</td>
+					<td>Jadi</td>
 					<td>View</td>
 				</tr>
+				
 				<?php $i=1; foreach($data as $row){ ?>
+
 				<tr>
+					<?php //(cara bodo) query modal 
+						$detail = $this->db->join('order', 'konfirmasi.id_order = order.id_order')
+										->join('user', 'user.id_user = order.id_user')
+										->where('order.id_order', $row['id_order'] )
+										->get('konfirmasi')
+										->row_array();
+					?>
 					<td align="center"><?= $i++ ?></td>
-					<td><?= $row['tanggal'] ?></td>
-					<td><?= ucwords($row['username']) ?></td>
+					<td><?= $row['tanggal'] ?></td>		
 					<td><?= $row['nama_barang'] ?></td>
 					<td><?= $row['jumlah'] ?> <?= $row['kemasan'] ?></td>
 					<td><?= $row['cabang'] ?> (<?= $row['pemesan'] ?>)</td>
-					<td><?= $row['keterangan'] ?></td>
-					<td style="<?php if($row['status'] == 'Ada') 
+					<td><?= substr($row['keterangan'], 0, 15)."..."  ?></td>
+					<td style="<?php if($detail['status'] == 'Ada') 
 										echo "color:green"; 
-									else if($row['status'] == 'Kosong') {
+									else if($detail['status'] == 'Kosong') {
 										echo "color:red";
 									}
 									?>">
 						<b>
-							<?php if($row['status'] == '') echo "Belum dikonfirmasi" ?>
-							<?php if(isset($row['status'])) echo $row['status'] ?>
+							<?php if($detail['status'] == '') echo "Belum Ada Konfirmasi" ?>
+							<?php if(isset($detail['status'])) echo $detail['status'] ?>
 						</b>
 					</td>
+					<td style="<?php if($detail['jadi'] == 'Ya') 
+										echo "color:green"; 
+									else if($detail['jadi'] == 'Tidak') {
+										echo "color:red";
+									}
+									?>">
+						<b>
+							<?php if($detail['jadi'] == '') echo "Belum Ada Konfirmasi" ?>
+							<?php if(isset($detail['jadi'])) echo $detail['jadi'] ?>
+						</b>
+					</td>
+
 					<td>
 						<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal<?=$row['id_order'] ?>"><i class="fa fa-eye"></i> Details</button>
-							<?php //(cara bodo) query modal 
-								$detail = $this->db->join('order', 'konfirmasi.id_order = order.id_order')
-												->join('user', 'user.id_user = order.id_user', 'LEFT')
-												->where('order.id_order', $row['id_order'] )
-												->get('konfirmasi')
-												->row_array(); 
-							?>
+							
 							<!-- Modal -->
 								<div class="modal fade" id="exampleModal<?=$row['id_order'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								  <div class="modal-dialog" role="document">
@@ -136,6 +150,11 @@
 								        		</td>
 								        	</tr>
 								        	<tr>
+								        		<td>Barang dari </td>
+								        		<td> : </td>
+								        		<td> <?= $detail['dari'] ?> </td>
+								        	</tr>
+								        	<tr>
 								        		<td>Jadi (Ya/Tidak)</td>
 								        		<td> : </td>
 								        		<!-- (cara bodo) memberi warna dan keterangan tulisan -->
@@ -150,14 +169,14 @@
 								        		</td>
 								        	</tr>
 								        	<tr>
-								        		<td>Barang dari </td>
-								        		<td> : </td>
-								        		<td> <?= $detail['dari'] ?> </td>
-								        	</tr>
-								        	<tr>
 								        		<td>Waktu Spesifik </td>
 								        		<td> : </td>
 								        		<td> <?= $detail['waktu_spesifik'] ?> </td>
+								        	</tr>
+								        	<tr>
+								        		<td>Catatan </td>
+								        		<td> : </td>
+								        		<td><?= $row['keterangan'] ?></td>	
 								        	</tr>
 								        	<tr>
 								        		<td>Keterangan </td>
