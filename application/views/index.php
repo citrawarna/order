@@ -6,8 +6,8 @@
 <?php $this->load->view('layout/navs') ?>
 	
 	
-		<div class="row justify-content-md-center">
-			<h3>List Orderan Cabang</h3>
+		<div class="row">
+			<h2 align="center">List Orderan Cabang</h2>
 		</div>
 
 		<div class="row">
@@ -43,17 +43,17 @@
 					} ?>	
 		</div>
 		<div class="row">
-			<table class="table table-striped table-sm">				
+			<table class="table table-striped table-condensed">				
 				<tr class="bg-light">
-					<td align="center">No</td>
-					<td>Tanggal</td>					
-					<td>Nama Barang</td>
-					<td>Jumlah</td>				
-					<td>Cabang</td>
-					<td>Status Barang</td>
-					<td>Jadi</td>
-					<td>Catatan</td>
-					<td>View</td>
+					<th align="center">No</th>
+					<th>Tanggal</th>					
+					<th>Nama Barang</th>
+					<th>Jumlah</th>				
+					<th>Cabang</th>
+					<th>Status Barang</th>
+					<th>Jadi</th>
+					<th>Catatan</th>
+					<th>View</th>
 				</tr>
 				
 				<?php $i=1; foreach($data as $row){ ?>
@@ -71,7 +71,6 @@
 					<td><?= $row['nama_barang'] ?></td>
 					<td><?= $row['jumlah'] ?> <?= $row['kemasan'] ?></td>
 					<td><?= $row['cabang'] ?> (<?= $row['pemesan'] ?>)</td>
-					<td><?= substr($row['keterangan'], 0, 15)."..."  ?></td>
 					<td style="<?php if($detail['status'] == 'Ada') 
 										echo "color:green"; 
 									else if($detail['status'] == 'Kosong') {
@@ -94,7 +93,7 @@
 							<?php if(isset($detail['jadi'])) echo $detail['jadi'] ?>
 						</b>
 					</td>
-
+					<td><?= substr($row['keterangan'], 0, 15)."..."  ?></td>
 					<td>
 						<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal<?=$row['id_order'] ?>"><i class="fa fa-eye"></i> Details</button>
 							
@@ -103,7 +102,7 @@
 								  <div class="modal-dialog" role="document">
 								    <div class="modal-content">
 								      <div class="modal-header">
-								        <h5 class="modal-title" id="exampleModalLabel">Detail Orderan</h5>
+								        <h3 class="modal-title" id="exampleModalLabel">Detail Orderan</h3>
 								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								          <span aria-hidden="true">&times;</span>
 								        </button>
@@ -185,9 +184,7 @@
 								        	</tr>
 								        </table>
 								      </div>
-								      <div class="modal-footer">
-								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								      </div>
+								     
 								    </div>
 								  </div>
 								</div>

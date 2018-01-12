@@ -23,7 +23,7 @@
 				</tr>
 				<tr>
 					<input type="hidden" name="id_order" class="form-control">
-					<td><input type="text" name="tanggal" class="form-control" required value="<?= date('Y-m-d') ?>" readonly></td>
+					<td><input type="text" name="tanggal" class="form-control" required value="<?= $input['tanggal'] ?>" readonly></td>
 					<td>
 						<input type="hidden" name="id_user" value="<?= $user ?>">
 						<input type="text" class="form-control" required placeholder="<?= $username ?>" readonly>

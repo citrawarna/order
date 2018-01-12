@@ -1,25 +1,24 @@
-	<div class="row justify-content-md-center">
-		<h3>Tambah Orderan Cabang</h3>
+	<div class="row" align="center">
+		<h2>Tambah Orderan Cabang</h2>
 	</div>
 
 	<div class="row">
-
 		<div class="back">
 			<a href="<?= base_url('admin') ?>">
 				<i class="fa fa-arrow-left"></i> Back
 			</a>	
 		</div>
-		<form action="<?= base_url('admin/tambah')?>" method="post" style="width:98%">
+		<form action="<?= base_url('admin/tambah')?>" method="post">
 			<table class="table" id="order_table">
 				<tr class="bg-light">
-					<td>Tanggal</td>
-					<td>Nama</td>
-					<td>Nama Barang</td>
-					<td>Jumlah</td>
-					<td>Kemasan</td>
-					<td>Cabang</td>
-					<td>Pemesan</td>
-					<td>Keterangan</td>
+					<th>Tanggal</th>
+					<th>Nama</th>
+					<th>Nama Barang</th>
+					<th>Jumlah</th>
+					<th>Kemasan</th>
+					<th>Cabang</th>
+					<th>Pemesan</th>
+					<th>Catatan</th>
 				</tr>
 				<tr>
 					<input type="hidden" name="id_order[]" class="form-control">
@@ -36,11 +35,13 @@
 					<td><input type="text" name="keterangan[]"class="form-control"></td>
 				</tr>
 			</table>
+
 			<div class="order-btn">
 				<a href="#" class="btn-plus"><i class="fa fa-plus"></i> Tambah</a>
 			</div>
 			
 			<input type="submit" value="Simpan" class="btn btn-simpan">
+			<br><br>
 		</form>
 		
 	</div>

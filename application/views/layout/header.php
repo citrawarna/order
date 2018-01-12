@@ -5,9 +5,11 @@
 	<title><?= $title ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="<?= base_url('assets/style.css') ?>">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="<?= base_url('assets/font-awesome/css/font-awesome.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/font-awesome/css/font-awesome.css') ?>">	
+	<link rel="stylesheet" href="<?= base_url('assets/jquery-ui.css') ?>">
+	<script src="<?= base_url('assets/jquery-3.2.1.min.js') ?>"></script>
+	<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js') ?>"></script>
 </head>
 
-<body>
+<body style="padding-top:50px;">

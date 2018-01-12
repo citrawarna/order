@@ -190,35 +190,41 @@ class Admin extends CI_Controller
 		$insert = $this->input;
 		$id_konfirmasi = $insert->post('id_konfirmasi[]');
 		$id_order = $insert->post('id_order[]');
+		$tanggal_konfirm = $insert->post('tanggal_konfirm[]');
 		$status = $insert->post('status[]');
 		$jadi = $insert->post('jadi[]');
 		$dari = $insert->post('dari[]');
 		$waktu_spesifik = $insert->post('waktu_spesifik[]');
 		$keterangan_konfirm = $insert->post('keterangan_konfirm[]');
+		$progress = $insert->post('progress[]');
 
 		$value = array();
 		
 		for($i = 0; $i<count($id_order); $i++) {
 			$value[$i] = array(
 				'id_konfirmasi' => $id_konfirmasi[$i],
-				'id_order' => $id_order[$i],				
+				'id_order' => $id_order[$i],
+				'tanggal_konfirm' => $tanggal_konfirm[$i],				
 				'status' => $status[$i],
 				'jadi' => $jadi[$i],
 				'dari' => $dari[$i],
 				'waktu_spesifik' => $waktu_spesifik[$i],
-				'keterangan_konfirm' => $keterangan_konfirm[$i],			
+				'keterangan_konfirm' => $keterangan_konfirm[$i],
+				'progress' => $progress[$i]			
 			);
 			//big thanks to surya karena sudah membantu menyelesaikan fungsi ini
 			$has_confirm = $this->db->query("select count(*) from konfirmasi where id_konfirmasi = '".$id_konfirmasi[$i]."'")->row_array();
 
 			if ($has_confirm['count(*)'] == 0) {
 				$this->db->insert_batch('konfirmasi', array([
-					'id_order' => $id_order[$i],				
+					'id_order' => $id_order[$i],
+					'tanggal_konfirm' => $tanggal_konfirm[$i],				
 					'status' => $status[$i],
 					'jadi' => $jadi[$i],
 					'dari' => $dari[$i],
 					'waktu_spesifik' => $waktu_spesifik[$i],
-					'keterangan_konfirm' => $keterangan_konfirm[$i],	
+					'keterangan_konfirm' => $keterangan_konfirm[$i],
+					'progress' => $progress[$i]	
 				]));	
 			}
 		

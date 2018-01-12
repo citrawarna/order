@@ -1,5 +1,5 @@
-	<div class="row justify-content-md-center">
-		<h3>Proses Orderan Cabang</h3>
+	<div class="row" align="center">
+		<h2>Proses Orderan Cabang</h2>
 	</div>
 	
 	<div class="row">
@@ -13,15 +13,17 @@
 		<form action="<?= base_url('admin/simpan_proses') ?>" method="post" style="width:98%">
 			<table class="table" id="order_table">
 				<tr class="bg-light">
-					<td>No</td>
-					<td>Nama Barang</td>
-					<td>Jumlah</td>
-					<td>Pemesan</td>
-					<td>Status Barang</td>
-					<td>Dari </td>
-					<td>Jadi ?</td>
-					<td>Waktu Spesifik</td>
-					<td>Keterangan</td>
+					<th>No</th>
+					<th>Nama Barang</th>
+					<th>Jumlah</th>
+					<th>Pemesan</th>
+					<th></th>
+					<th>Status Barang</th>
+					<th>Dari </th>
+					<th>Jadi ?</th>
+					<th>Waktu Spesifik</th>
+					<th>Keterangan</th>
+					<th>PO</th>
 				</tr>
 				<?php $i=1; foreach($query as $row) {  ?>
 				<tr>
@@ -31,7 +33,7 @@
 					<td><?= $row['nama_barang'] ?></td>
 					<td><?= $row['jumlah'] ?> <?= $row['kemasan'] ?></td>
 					<td><?= $row['cabang'] ?> (<?= $row['pemesan'] ?>)</td>
-					
+					<td><input type="hidden" name="tanggal_konfirm[]" value="<?= date('Y-m-d'); ?>"></td>
 					<td>
 						<select name="status[]" id="">
 							<option value="" <?php if($row['status']=="") { echo "selected"; } ?>>- Pilih -</option>
@@ -49,6 +51,13 @@
 					</td>
 					<td><input type="text" name="waktu_spesifik[]" class="form-control" value="<?= $row['waktu_spesifik'] ?>"></td>
 					<td><input type="text" name="keterangan_konfirm[]" class="form-control" value="<?= $row['keterangan_konfirm'] ?>"></td>
+					<td>
+						<select name="progress[]" id="">
+							<option value="" <?php if($row['progress']=="") { echo "selected"; } ?>>- Pilih -</option>
+							<option value="Sudah" <?php if($row['progress']=="Sudah") { echo "selected"; } ?> >Sudah</option>
+							<option value="Belum" <?php if($row['progress']=="Belum") { echo "selected"; } ?> >Belum</option>	
+						</select>
+					</td>
 				</tr>
 				<?php } ?>
 			</table>
