@@ -63,6 +63,7 @@
 			</table>
 		
 			<input type="submit" value="Simpan" class="btn btn-simpan">
+
 		</form>
-		
+		<br>
 	</div>

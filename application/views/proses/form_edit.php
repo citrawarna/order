@@ -1,5 +1,5 @@
-	<div class="row justify-content-md-center">
-		<h3>Tambah Orderan Cabang</h3>
+	<div class="row" align="center">
+		<h2>Edit Orderan Cabang</h2>
 	</div>
 
 	<div class="row">
@@ -12,14 +12,14 @@
 		<form action="<?= base_url('admin/edit/'.$input['id_order'])?>" method="post" style="width:98%">
 			<table class="table" id="order_table">
 				<tr class="bg-light">
-					<td>Tanggal</td>
-					<td>Nama</td>
-					<td>Nama Barang</td>
-					<td>Jumlah</td>
-					<td>Kemasan</td>
-					<td>Cabang</td>
-					<td>Pemesan</td>
-					<td>Keterangan</td>
+					<th>Tanggal</th>
+					<th>Nama</th>
+					<th>Nama Barang</th>
+					<th>Jumlah</th>
+					<th>Kemasan</th>
+					<th>Cabang</th>
+					<th>Pemesan</th>
+					<th>Keterangan</th>
 				</tr>
 				<tr>
 					<input type="hidden" name="id_order" class="form-control">
@@ -39,5 +39,5 @@
 			
 			<input type="submit" value="Simpan" class="btn btn-simpan">
 		</form>
-		
+		<br>
 	</div>
