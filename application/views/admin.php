@@ -230,9 +230,9 @@
 		</form>
 			
 
-	<div class="row justify-content-end" style="margin-right:10px">	
-		<?= $pagination ?>
+	<div class="row justify-content-end" align="right" style="margin-right:15px;">			
+		<?= $pagination ?>		
 	</div>
-	<br>
+
 
 	

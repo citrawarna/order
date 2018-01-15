@@ -194,9 +194,9 @@
 			</table>
 		</div>
 
-		<div class="row justify-content-end" style="margin-right:10px">
+		<div class="row" align="right" style="margin-right:10px">
 			<?= $pagination ?>
 		</div>
-		<br>
+
 
 <?php $this->load->view('layout/footer') ?>

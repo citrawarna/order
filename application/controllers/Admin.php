@@ -32,15 +32,26 @@ class Admin extends CI_Controller
 		$config['total_rows'] = $jumlah;
 		$config['per_page'] = $per_halaman;
 		$config['use_page_numbers'] = true;
-		$config['first_link'] = '<div class="page-link">First</div>';
-		$config['last_link'] = '<div class="page-link">Last</div>';
-		$config['next_link'] = '<div class="page-link">&raquo;</div>';
-		$config['prev_link'] = '<div class="page-link">&laquo; </div>';
-		$config['cur_tag_open'] = '<li class="page-link bg-primary" style="color:white"><span class="sr-only">(current)</span>';
-		$config['cur_tag_close'] = '</li>';
-		$config['num_tag_open'] = '<li class="page-link">';
-		$config['num_tag_close'] = '</li>';		
 		
+		//Tambahan untuk styling
+        $config['full_tag_open'] = "<ul class='pagination'>";
+        $config['full_tag_close'] ="</ul>";
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+        $config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+        $config['next_tag_open'] = "<li>";
+        $config['next_tagl_close'] = "</li>";
+        $config['prev_tag_open'] = "<li>";
+        $config['prev_tagl_close'] = "</li>";
+        $config['first_tag_open'] = "<li>";
+        $config['first_tagl_close'] = "</li>";
+        $config['last_tag_open'] = "<li>";
+        $config['last_tagl_close'] = "</li>";
+        $config['first_link']='< Pertama ';
+        $config['last_link']='Terakhir > ';
+     
+
 		$this->pagination->initialize($config);
 		$pagination = $this->pagination->create_links();
 
